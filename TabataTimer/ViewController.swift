@@ -22,7 +22,8 @@ class ViewController: NSViewController {
         if(startButton.title == "Start"){
             let minutes = minuteField.integerValue
             let seconds = secondField.integerValue
-            //readonly fields
+            minuteField.isEnabled = false
+            secondField.isEnabled = false
             if (minutes>=0 && seconds>0) || (minutes>0 && seconds>=0){
                 //let interval = "\(minutes):\(seconds)"
                 //intervalLabel.stringValue = interval
@@ -50,6 +51,10 @@ class ViewController: NSViewController {
     }
     
     @IBAction func resetButton(_ sender: Any) {
+        //ask for confirmation
+        timer.invalidate()
+        minuteField.isEnabled = true
+        secondField.isEnabled = true
         clearText(field: minuteField)
         clearText(field: secondField)
         clearText(field: intervalLabel)
