@@ -20,6 +20,7 @@ class ViewController: NSViewController {
     var countdown:TimeInterval = 0
     var total:TimeInterval = 0
     var timer = Timer()
+    var sound:Bool = true
 
     @IBAction func startButton(_ sender: Any) {
         if(self.startButton.title == "START"){
@@ -28,8 +29,9 @@ class ViewController: NSViewController {
             if (minutes>=0 && seconds>0) || (minutes>0 && seconds>=0){
                 minuteField.isEnabled = false
                 secondField.isEnabled = false
-                interval = TimeInterval(minutes*60+seconds)
+                interval = TimeInterval(minutes*60+seconds-1)
                 countdown = interval
+                intervalLabel.stringValue = intervalTimeString(time: countdown)
                 total = 0
                 //intervalLabel.stringValue = interval
                 runTimer(intervals: 1)
@@ -57,8 +59,11 @@ class ViewController: NSViewController {
         } else {
             if (repeatCheck.state == .on){
                 countdown = interval
+                sound = true
+                playSound(play: sound)
             } else {
-                NSSound.glass?.play()
+                playSound(play: sound)
+                sound = false
             }
         }
         intervalLabel.stringValue = intervalTimeString(time: countdown) //This will update the label.
@@ -106,6 +111,12 @@ class ViewController: NSViewController {
         alert.addButton(withTitle: "OK")
         alert.addButton(withTitle: "Cancel")
         return alert.runModal() == .alertFirstButtonReturn
+    }
+    
+    func playSound(play: Bool){
+        if(play){
+            NSSound.frog?.play()
+        }
     }
     
     override func viewDidLoad() {
