@@ -10,19 +10,19 @@ import Cocoa
 
 class ViewController: NSViewController {
     @IBOutlet weak var minuteField: NSTextField!
+    @IBOutlet weak var startButton: NSButton!
     @IBOutlet weak var secondField: NSTextField!
     @IBOutlet weak var intervalLabel: NSTextField!
     @IBOutlet weak var totalLabel: NSTextField!
-    @IBOutlet weak var startButton: NSButton!
     @IBOutlet weak var repeatCheck: NSButton!
+    @IBOutlet weak var resetButton: NSButton!
     var interval:TimeInterval = 0
     var countdown:TimeInterval = 0
     var total:TimeInterval = 0
     var timer = Timer()
-    var isTimerRunning = false
 
     @IBAction func startButton(_ sender: Any) {
-        if(startButton.title == "START"){
+        if(self.startButton.title == "START"){
             let minutes = minuteField.integerValue
             let seconds = secondField.integerValue
             if (minutes>=0 && seconds>0) || (minutes>0 && seconds>=0){
@@ -33,16 +33,17 @@ class ViewController: NSViewController {
                 total = 0
                 //intervalLabel.stringValue = interval
                 runTimer(intervals: 1)
-                startButton.title = "PAUSE"
+                self.startButton.title = "PAUSE"
+                self.resetButton.isEnabled = true
             }
         }
-        else if (startButton.title == "PAUSE"){
+        else if (self.startButton.title == "PAUSE"){
             timer.invalidate()
-            startButton.title = "RESUME"
+            self.startButton.title = "RESUME"
         }
         else{
             runTimer(intervals: 1)
-            startButton.title = "PAUSE"
+            self.startButton.title = "PAUSE"
         }
     }
     
@@ -54,10 +55,10 @@ class ViewController: NSViewController {
         if countdown > 0 {
             countdown -= 1
         } else {
-            if (repeatCheck.isEnabled){
+            if (repeatCheck.state == .on){
                 countdown = interval
             } else {
-                //Send alert to indicate "time's up!"
+                NSSound.glass?.play()
             }
         }
         intervalLabel.stringValue = intervalTimeString(time: countdown) //This will update the label.
@@ -79,24 +80,37 @@ class ViewController: NSViewController {
     }
     
     @IBAction func resetButton(_ sender: Any) {
-        //ask for confirmation
-        timer.invalidate()
-        minuteField.isEnabled = true
-        secondField.isEnabled = true
-        clearText(field: minuteField)
-        clearText(field: secondField)
-        clearText(field: intervalLabel)
-        clearText(field: totalLabel)
-        startButton.title = "Start"
+        let answer = dialogOKCancel(question: "Reset all timers?", text: "")
+        if (answer){
+            timer.invalidate()
+            minuteField.isEnabled = true
+            secondField.isEnabled = true
+            clearText(field: minuteField)
+            clearText(field: secondField)
+            clearText(field: intervalLabel)
+            clearText(field: totalLabel)
+            self.startButton.title = "START"
+            self.resetButton.isEnabled = false
+        }
     }
     
     func clearText(field: NSTextField){
         field.stringValue = ""
     }
     
+    func dialogOKCancel(question: String, text: String) -> Bool {
+        let alert = NSAlert()
+        alert.messageText = question
+        alert.informativeText = text
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+        return alert.runModal() == .alertFirstButtonReturn
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.resetButton.isEnabled = false
     }
     
     override var representedObject: Any? {
