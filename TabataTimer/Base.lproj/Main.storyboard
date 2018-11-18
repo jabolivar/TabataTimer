@@ -802,6 +802,7 @@
                         <outlet property="intervalLabel" destination="fuo-Rd-dwm" id="pKo-QA-PM3"/>
                         <outlet property="minuteField" destination="6rD-S7-KDa" id="ljK-0k-TAH"/>
                         <outlet property="secondField" destination="Kmf-yu-qSi" id="5Mq-RG-cgu"/>
+                        <outlet property="startButton" destination="mBZ-WR-25o" id="oRT-Pa-nRN"/>
                         <outlet property="totalLabel" destination="O8q-lg-aOz" id="D7r-0v-A5d"/>
                     </connections>
                 </viewController>
