@@ -14,6 +14,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var intervalLabel: NSTextField!
     @IBOutlet weak var totalLabel: NSTextField!
     @IBOutlet weak var startButton: NSButton!
+    @IBOutlet weak var repeatCheck: NSButton!
     var interval:TimeInterval = 0
     var countdown:TimeInterval = 0
     var total:TimeInterval = 0
@@ -21,7 +22,7 @@ class ViewController: NSViewController {
     var isTimerRunning = false
 
     @IBAction func startButton(_ sender: Any) {
-        if(startButton.title == "Start"){
+        if(startButton.title == "START"){
             let minutes = minuteField.integerValue
             let seconds = secondField.integerValue
             if (minutes>=0 && seconds>0) || (minutes>0 && seconds>=0){
@@ -32,16 +33,16 @@ class ViewController: NSViewController {
                 total = 0
                 //intervalLabel.stringValue = interval
                 runTimer(intervals: 1)
-                startButton.title = "Pause"
+                startButton.title = "PAUSE"
             }
         }
-        else if (startButton.title == "Pause"){
+        else if (startButton.title == "PAUSE"){
             timer.invalidate()
-            startButton.title = "Resume"
+            startButton.title = "RESUME"
         }
         else{
             runTimer(intervals: 1)
-            startButton.title = "Pause"
+            startButton.title = "PAUSE"
         }
     }
     
@@ -50,16 +51,18 @@ class ViewController: NSViewController {
     }
     
     @objc func updateTimer() {
-        if countdown < 1 {
-            
-            countdown = interval
-            //Send alert to indicate "time's up!"
+        if countdown > 0 {
+            countdown -= 1
         } else {
-        countdown -= 1     //This will decrement(count down)the seconds.
-        total += 1
-        intervalLabel.stringValue = intervalTimeString(time: countdown) //This will update the label.
-        totalLabel.stringValue = totalTimeString(time: total) //This will update the label.
+            if (repeatCheck.isEnabled){
+                countdown = interval
+            } else {
+                //Send alert to indicate "time's up!"
+            }
         }
+        intervalLabel.stringValue = intervalTimeString(time: countdown) //This will update the label.
+        total += 1
+        totalLabel.stringValue = totalTimeString(time: total) //This will update the label.
     }
     
     func intervalTimeString(time:TimeInterval) -> String {
