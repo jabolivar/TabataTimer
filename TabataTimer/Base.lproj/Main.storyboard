@@ -706,109 +706,110 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="TabataTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="267" height="136"/>
+                        <rect key="frame" x="0.0" y="0.0" width="293" height="103"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mBZ-WR-25o">
-                                <rect key="frame" x="15" y="24" width="64" height="32"/>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zqR-cQ-zwW" propertyAccessControl="all">
+                                <rect key="frame" x="100" y="10" width="87" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VLl-RN-aUX">
+                                <buttonCell key="cell" type="push" title="RESUME" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ebh-Gc-Ll8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" size="13" name="CourierNewPSMT"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="startButton:" target="XfG-lQ-9wD" id="ZD1-md-ajU"/>
+                                    <action selector="startButton:" target="XfG-lQ-9wD" id="Z7K-HC-q15"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6rD-S7-KDa">
-                                <rect key="frame" x="88" y="85" width="40" height="19"/>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EaM-DG-EnX" propertyAccessControl="all">
+                                <rect key="frame" x="20" y="43" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="00" drawsBackground="YES" id="3Lf-Hd-8xd">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="xiH-cy-pP2"/>
-                                    <font key="font" metaFont="system"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="00" drawsBackground="YES" id="zSi-DL-N1v">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="MWZ-Gg-xuB"/>
+                                    <font key="font" size="13" name="CourierNewPS-BoldMT"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kmf-yu-qSi">
-                                <rect key="frame" x="88" y="59" width="40" height="19"/>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZcT-ST-u2i" propertyAccessControl="all">
+                                <rect key="frame" x="52" y="43" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="00" drawsBackground="YES" id="qNZ-uj-Imr">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="IYe-J7-4oP"/>
-                                    <font key="font" metaFont="system"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="00" drawsBackground="YES" id="VNO-Rj-9iJ">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="cSD-Tf-tIh"/>
+                                    <font key="font" size="13" name="CourierNewPS-BoldMT"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aul-zp-8uy">
-                                <rect key="frame" x="19" y="85" width="56" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7RW-pn-L7j" propertyAccessControl="all">
+                                <rect key="frame" x="18" y="68" width="28" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Minutes:" id="Jbb-iW-EVk">
-                                    <font key="font" metaFont="system"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="MIN" id="q3S-hW-Vxd">
+                                    <font key="font" size="13" name="CourierNewPSMT"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m3V-4s-rJw">
-                                <rect key="frame" x="19" y="60" width="61" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3D-T1-d5x" propertyAccessControl="all">
+                                <rect key="frame" x="50" y="68" width="28" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Seconds:" id="Ylq-EQ-IhA">
-                                    <font key="font" metaFont="system"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="SEC" id="ovN-pV-Epe">
+                                    <font key="font" size="13" name="CourierNewPSMT"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbu-3d-kgW">
-                                <rect key="frame" x="76" y="24" width="64" height="32"/>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpu-8z-Fck" propertyAccessControl="all">
+                                <rect key="frame" x="192" y="10" width="87" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kxs-YO-nXf">
+                                <buttonCell key="cell" type="push" title="RESET" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="avN-x1-HJF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" size="13" name="CourierNewPSMT"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="resetButton:" target="XfG-lQ-9wD" id="mGj-PF-xFR"/>
+                                    <action selector="resetButton:" target="XfG-lQ-9wD" id="Ldn-Da-hxL"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fuo-Rd-dwm">
-                                <rect key="frame" x="149" y="60" width="100" height="42"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7X-63-mSm" propertyAccessControl="all">
+                                <rect key="frame" x="88" y="36" width="110" height="49"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" placeholderString="00:00" id="X1O-Rc-hk5">
-                                    <font key="font" metaFont="system" size="35"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" placeholderString="00:00" id="hz8-A8-hv0">
+                                    <font key="font" size="35" name="CourierNewPS-BoldMT"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O8q-lg-aOz">
-                                <rect key="frame" x="185" y="33" width="64" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BgC-4y-sxl" propertyAccessControl="all">
+                                <rect key="frame" x="202" y="43" width="67" height="24"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" placeholderString="00:00:00" id="2Y1-fa-yyi">
-                                    <font key="font" metaFont="system"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" placeholderString="00:00:00" id="Vut-YA-z6L">
+                                    <font key="font" size="13" name="CourierNewPS-BoldMT"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bLF-TQ-jPJ">
-                                <rect key="frame" x="149" y="33" width="41" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7O-Nh-r8D" propertyAccessControl="all">
+                                <rect key="frame" x="214" y="68" width="44" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Total: " id="Xyg-E1-xqU">
-                                    <font key="font" metaFont="system"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="TOTAL" id="1hW-U3-lEB">
+                                    <font key="font" size="13" name="CourierNewPSMT"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKU-rV-71J" propertyAccessControl="all">
+                                <rect key="frame" x="18" y="18" width="69" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="REPEAT" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ai8-Up-RAw">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name="CourierNewPSMT"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                     </view>
-                    <connections>
-                        <outlet property="intervalLabel" destination="fuo-Rd-dwm" id="pKo-QA-PM3"/>
-                        <outlet property="minuteField" destination="6rD-S7-KDa" id="ljK-0k-TAH"/>
-                        <outlet property="secondField" destination="Kmf-yu-qSi" id="5Mq-RG-cgu"/>
-                        <outlet property="startButton" destination="mBZ-WR-25o" id="oRT-Pa-nRN"/>
-                        <outlet property="totalLabel" destination="O8q-lg-aOz" id="D7r-0v-A5d"/>
-                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31.5" y="588"/>
+            <point key="canvasLocation" x="-18.5" y="571.5"/>
         </scene>
     </scenes>
 </document>

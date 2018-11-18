@@ -14,7 +14,9 @@ class ViewController: NSViewController {
     @IBOutlet weak var intervalLabel: NSTextField!
     @IBOutlet weak var totalLabel: NSTextField!
     @IBOutlet weak var startButton: NSButton!
-    var seconds = 60
+    var interval:TimeInterval = 0
+    var countdown:TimeInterval = 0
+    var total:TimeInterval = 0
     var timer = Timer()
     var isTimerRunning = false
 
@@ -22,10 +24,12 @@ class ViewController: NSViewController {
         if(startButton.title == "Start"){
             let minutes = minuteField.integerValue
             let seconds = secondField.integerValue
-            minuteField.isEnabled = false
-            secondField.isEnabled = false
             if (minutes>=0 && seconds>0) || (minutes>0 && seconds>=0){
-                //let interval = "\(minutes):\(seconds)"
+                minuteField.isEnabled = false
+                secondField.isEnabled = false
+                interval = TimeInterval(minutes*60+seconds)
+                countdown = interval
+                total = 0
                 //intervalLabel.stringValue = interval
                 runTimer(intervals: 1)
                 startButton.title = "Pause"
@@ -46,8 +50,29 @@ class ViewController: NSViewController {
     }
     
     @objc func updateTimer() {
-        seconds -= 1     //This will decrement(count down)the seconds.
-        totalLabel.stringValue = "\(seconds)" //This will update the label.
+        if countdown < 1 {
+            
+            countdown = interval
+            //Send alert to indicate "time's up!"
+        } else {
+        countdown -= 1     //This will decrement(count down)the seconds.
+        total += 1
+        intervalLabel.stringValue = intervalTimeString(time: countdown) //This will update the label.
+        totalLabel.stringValue = totalTimeString(time: total) //This will update the label.
+        }
+    }
+    
+    func intervalTimeString(time:TimeInterval) -> String {
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i", minutes, seconds)
+    }
+    
+    func totalTimeString(time:TimeInterval) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
     
     @IBAction func resetButton(_ sender: Any) {
