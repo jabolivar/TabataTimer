@@ -832,8 +832,6 @@
                         <outlet property="repeatCheck" destination="MKU-rV-71J" id="q8K-9p-cE6"/>
                         <outlet property="resetButton" destination="rpu-8z-Fck" id="qzj-hs-zdX"/>
                         <outlet property="secondField" destination="ZcT-ST-u2i" id="CeS-l3-1sB"/>
-                        <outlet property="secondbutton" destination="ZcT-ST-u2i" id="rFP-4y-doN"/>
-                        <outlet property="secondfield" destination="ZcT-ST-u2i" id="apK-Hb-uWH"/>
                         <outlet property="startButton" destination="zqR-cQ-zwW" id="uLz-vN-1Uq"/>
                         <outlet property="totalLabel" destination="BgC-4y-sxl" id="nf9-g4-rU0"/>
                     </connections>

@@ -23,7 +23,7 @@ class ViewController: NSViewController {
     var sound:Bool = true
 
     @IBAction func startButton(_ sender: Any) {
-        if(self.startButton.title == "START"){
+        if (self.startButton.title == "START"){
             let minutes = minuteField.integerValue
             let seconds = secondField.integerValue
             if (minutes>=0 && seconds>0) || (minutes>0 && seconds>=0){
@@ -61,6 +61,7 @@ class ViewController: NSViewController {
                 countdown = interval
                 sound = true
                 playSound(play: sound)
+                //NSSound(contentsOfFile: "Sounds/AirHorn.mp3", byReference: true)?.play()
             } else {
                 playSound(play: sound)
                 sound = false
@@ -113,9 +114,13 @@ class ViewController: NSViewController {
         return alert.runModal() == .alertFirstButtonReturn
     }
     
+    /*override func viewDidDisappear() {
+        timer.invalidate()
+    }*/
+    
     func playSound(play: Bool){
         if(play){
-            NSSound.frog?.play()
+            NSSound( named: "Glass")?.play()
         }
     }
     

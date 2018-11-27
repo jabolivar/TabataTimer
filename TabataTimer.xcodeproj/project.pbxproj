@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DDB40F221A1C44D00CA0FEA /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB40F121A1C44D00CA0FEA /* Sounds */; };
+		0DDB40F621A1D72400CA0FEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB40F521A1D72300CA0FEA /* ViewController.swift */; };
 		0DE5E8CF21A08C30000EEC2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE5E8CE21A08C30000EEC2B /* AppDelegate.swift */; };
-		0DE5E8D121A08C30000EEC2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE5E8D021A08C30000EEC2B /* ViewController.swift */; };
 		0DE5E8D321A08C32000EEC2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5E8D221A08C32000EEC2B /* Assets.xcassets */; };
 		0DE5E8D621A08C32000EEC2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5E8D421A08C32000EEC2B /* Main.storyboard */; };
-		0DE5E8DF21A12CDD000EEC2B /* NSSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE5E8DE21A12CDD000EEC2B /* NSSound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DDB40F121A1C44D00CA0FEA /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = Assets.xcassets/Sounds; sourceTree = "<group>"; };
+		0DDB40F521A1D72300CA0FEA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0DE5E8CB21A08C30000EEC2B /* TabataTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabataTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE5E8CE21A08C30000EEC2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0DE5E8D021A08C30000EEC2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0DE5E8D221A08C32000EEC2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DE5E8D521A08C32000EEC2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DE5E8D721A08C32000EEC2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DE5E8D821A08C32000EEC2B /* TabataTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TabataTimer.entitlements; sourceTree = "<group>"; };
-		0DE5E8DE21A12CDD000EEC2B /* NSSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSSound.swift; path = Assets.xcassets/NSSound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +55,13 @@
 		0DE5E8CD21A08C30000EEC2B /* TabataTimer */ = {
 			isa = PBXGroup;
 			children = (
+				0DDB40F521A1D72300CA0FEA /* ViewController.swift */,
 				0DE5E8CE21A08C30000EEC2B /* AppDelegate.swift */,
-				0DE5E8D021A08C30000EEC2B /* ViewController.swift */,
 				0DE5E8D221A08C32000EEC2B /* Assets.xcassets */,
+				0DDB40F121A1C44D00CA0FEA /* Sounds */,
 				0DE5E8D421A08C32000EEC2B /* Main.storyboard */,
 				0DE5E8D721A08C32000EEC2B /* Info.plist */,
 				0DE5E8D821A08C32000EEC2B /* TabataTimer.entitlements */,
-				0DE5E8DE21A12CDD000EEC2B /* NSSound.swift */,
 			);
 			path = TabataTimer;
 			sourceTree = "<group>";
@@ -124,6 +124,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DDB40F221A1C44D00CA0FEA /* Sounds in Resources */,
 				0DE5E8D321A08C32000EEC2B /* Assets.xcassets in Resources */,
 				0DE5E8D621A08C32000EEC2B /* Main.storyboard in Resources */,
 			);
@@ -136,9 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DE5E8D121A08C30000EEC2B /* ViewController.swift in Sources */,
+				0DDB40F621A1D72400CA0FEA /* ViewController.swift in Sources */,
 				0DE5E8CF21A08C30000EEC2B /* AppDelegate.swift in Sources */,
-				0DE5E8DF21A12CDD000EEC2B /* NSSound.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
