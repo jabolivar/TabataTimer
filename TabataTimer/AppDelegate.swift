@@ -20,18 +20,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
-    /*func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return true
-    }*/
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+            return true;
+    }
     
-    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+    /*func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         let answer = dialogOKCancel(question: "Close and exit?", text: "")
         if (answer){
             return NSApplication.TerminateReply.terminateNow
         }else{
             return NSApplication.TerminateReply.terminateCancel
         }
-    }
+    }*/
     
     func dialogOKCancel(question: String, text: String) -> Bool {
         let alert = NSAlert()
@@ -42,6 +42,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         alert.addButton(withTitle: "Cancel")
         return alert.runModal() == .alertFirstButtonReturn
     }
-
 }
-
